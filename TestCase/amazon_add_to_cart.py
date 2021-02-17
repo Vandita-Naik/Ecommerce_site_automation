@@ -22,9 +22,9 @@ action.move_to_element(sign_in_box).perform()
 time.sleep(3)
 sign_in_btn=driver.find_element_by_xpath("//*[@id='nav-flyout-ya-signin']/a/span")
 sign_in_btn.click()
-driver.find_element_by_id("ap_email").send_keys("+919902678139")
+driver.find_element_by_id("ap_email").send_keys("User Name")
 driver.find_element_by_id("continue").click()
-driver.find_element_by_id("ap_password").send_keys("Vandita@1992")
+driver.find_element_by_id("ap_password").send_keys("Password")
 driver.find_element_by_id("signInSubmit").click()
 
 #mobiles
@@ -56,13 +56,13 @@ sh1=wb.active
 sh1.append(["Data","Price"])
 for x in list(finalList):
     sh1.append(x)
-wb.save("FinalRecords.xlsx")
+wb.save("FinalRecords.xlsx") 
 
 #Email Sending
 msg=EmailMessage()
 msg['Subject']="Samsung Phone data"
-msg['From']="vandunaik04@gmail.com"
-msg['To']="vandunaik04@gmail.com"
+msg['From']="Email Id 1"
+msg['To']="Email Id 2"
 msg.set_content("This is for practice purpose")
 
 time.sleep(4)
@@ -77,7 +77,7 @@ with open("FinalRecords.xlsx","rb") as f:
 
 
 with smtplib.SMTP_SSL("smtp.gmail.com",465) as server:  # same for all
-    server.login("vandunaik04@gmail.com","Vandita@1104")
+    server.login("Email Id","password")
     server.send_message(msg)
 print("Email has been sent")
 
@@ -107,3 +107,5 @@ driver.find_element_by_id("hlb-ptc-btn-native").click()
 time.sleep(3)
 driver.find_element_by_css_selector("span[class='a-button-inner']").click()
 driver.find_element_by_css_selector("input[type='submit']").click()
+time.sleep(20)
+driver. close()
